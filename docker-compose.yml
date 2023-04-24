@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  bot:
+    build: .
+    env_file:
+      - .env
+    environment:
+      - TRANSFORMERS_CACHe=/cache
+      - HF_HOME=/cache
+      - XDG_CACHE_HOME=/cache
+    volumes:
+      - cache:/cache
+
+volumes:
+  cache:
